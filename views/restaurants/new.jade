@@ -1,7 +1,18 @@
 extends ../layout
 
 block content
+
   header gTables
   main
     h1= title
     p welcome to the #{title}
+
+  label(for="name") Name
+  br
+  input(type="text" name="name")
+  br
+  label(for="type") Type
+  
+  select(name="type")
+    for cuisine in cuisines
+      option = cuisine
