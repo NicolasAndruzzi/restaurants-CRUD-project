@@ -1,12 +1,29 @@
-*{
-  background-color: red;
+header{
+  background-color: #5ECE76;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  color: #3A3938;
+  line-height: 10vh;
+  font-size: 8vh;
+  text-align: center;
 }
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.newRestaurant{
+  position: fixed;
+  top: 3vh;
+  right: 1vw;
+  color: white;
+  font-size: 3vh;
+  padding-right: 2vh;
 }
 
-a {
-  color: #00B7FF;
+main{
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  width: 100vw;
+  height: 90vh;
 }

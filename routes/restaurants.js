@@ -1,18 +1,24 @@
 var express = require('express');
 var router = express.Router();
-var knex = require('knex') ({
-  client: 'pg',
-  connection: 'postgress://localhost/businesses'
-});
+var knex = require('knex')
+var server = require('../serverlogic/serverlogic.js')
 
-// function restaurants(){
-//   return knex('restaurants');
-// }
+
+function restaurants(){
+  return knex('restaurants');
+}
 
 /* GET users listing. */
-router.get('/restaurants', function(req, res, next) {
-  res.render('./restaurants/index', {title: "red"});
+router.get('/restaurants/', function(req, res, next) {
+  // restaurants().select().then(function(results) {
+  //   res.render('restaurants/index', {restaurants: results});
+  // });
+  res.send("HEllo")
 });
 
-// console.log(knex('restaurants'));
+// router.get('/restaurants/:id', function(req,res,next){
+//
+//   res.redirect('/')
+// });
+
 module.exports = router;
