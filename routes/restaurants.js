@@ -16,3 +16,7 @@ router.get('/restaurants', function(req, res, next) {
 
 // console.log(knex('restaurants'));
 module.exports = router;
+
+
+
+// THIS IS THE SCRATCH BRANCH
