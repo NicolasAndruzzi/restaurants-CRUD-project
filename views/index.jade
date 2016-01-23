@@ -1,5 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .header
+    h1 gTables
+  .newRest
+    a(href="restaurants/new", class="newRestText") New Restaurant
+  .bigContainer
+    .container
+      for restaurant in restaurants 
+        .box
+          a(href='/restaurants/'+restaurant.id)= restaurant.name
+          .imageDiv
+            a(href='restaurants/' + restaurant.id) 
+              img(src= restaurant.url)
+          .type= restaurant.style
+          .location= restaurant.location
+            .starsDiv
+              -for(var i=0; i < restaurant.stars; i++)
+                img.star(src= "images/star.png")
