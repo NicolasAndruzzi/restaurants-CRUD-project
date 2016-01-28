@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-// Update with your config settings.
-=======
->>>>>>> scratch
+
 require('dotenv').load();
 
 module.exports = {
@@ -15,8 +12,5 @@ module.exports = {
     client: 'pg',
     connection: process.env.DATABASE_URL + '?ssl=true'
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> scratch
 };

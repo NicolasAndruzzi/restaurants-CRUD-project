@@ -17,7 +17,7 @@ router.get('/restaurants', function(req, res, next) {
   })
 })
 
-router.get('/restaurants/:id', function(req, res, next) {
+router.get('/restaurants/:id/show', function(req, res, next) {
   restaurants().select().where("id", req.params.id).then(function(results){
     console.log(results[0]);
     res.render('restaurants/show',{results: results[0]})
@@ -25,9 +25,8 @@ router.get('/restaurants/:id', function(req, res, next) {
 })
 
 router.get('/restaurants/new', function(req, res, next) {
-    var cuisines = server.foods
-    res.render('restaurants/new',{cuisines: cuisines})
-  })
+  res.render("restaurants/new" , {cuisnes: server.foods})
+  console.log(cuisnes);
 })
 
 

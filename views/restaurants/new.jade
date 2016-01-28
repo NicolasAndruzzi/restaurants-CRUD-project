@@ -6,13 +6,17 @@ block content
   main
     h1= title
     p welcome to the #{title}
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  form( action="/restaraunts" method="POST")
+    label(for="name") Name
+    br
+    input(type="text" name="name")
 
-  label(for="name") Name
-  br
-  input(type="text" name="name")
-  br
-  label(for="type") Type
-  
-  select(name="type")
-    for cuisine in cuisines
-      option = cuisine
+    for x in cuisnes
+      input(type="radio" name="type" value="x")

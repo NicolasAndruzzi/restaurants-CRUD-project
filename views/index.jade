@@ -1,13 +1,12 @@
 extends layout
 
 block content
-<<<<<<< HEAD
+
   h1= title
-  p Welcome to #{title.name}
+  p Welcome to #{restaurants.name}
   p #{restaurants.id}
   
-  
-=======
+
   .header
     h1 gTables
   .newRest
@@ -16,7 +15,7 @@ block content
     .container
       for restaurant in restaurants 
         .box
-          a(href='/restaurants/'+restaurant.id)= restaurant.name
+          a(href='/restaurants/'+restaurant.id+"/show")= restaurant.name
           .imageDiv
             a(href='restaurants/' + restaurant.id) 
               img(src= restaurant.url)
@@ -25,4 +24,3 @@ block content
             .starsDiv
               -for(var i=0; i < restaurant.stars; i++)
                 img.star(src= "images/star.png")
->>>>>>> scratch
