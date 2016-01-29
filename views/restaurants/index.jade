@@ -1,8 +1,8 @@
 extends ../layout
 
 block content
-  header gTables
-    a.newRestaurant(href="/restaurants/new") New Restaurant
+  a.newRestaurant(href="/restaurants/new") New Restaurant
   main
-    h1= title
-    p welcome to the #{title}
+    for restaurant in restaurants 
+      .box
+        a(href='/restaurants/'+restaurant.id)= restaurant.name

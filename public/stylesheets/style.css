@@ -1,11 +1,11 @@
 header{
-  background-color: #5ECE76;
+  background-color: #7EC479;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 10vh;
-  color: #3A3938;
+  color: #383931;
   line-height: 10vh;
   font-size: 8vh;
   text-align: center;
@@ -13,11 +13,10 @@ header{
 
 .newRestaurant{
   position: fixed;
-  top: 3vh;
+  top: 6vh;
   right: 1vw;
   color: white;
   font-size: 3vh;
-  padding-right: 2vh;
 }
 
 main{
@@ -26,4 +25,14 @@ main{
   left: 0;
   width: 100vw;
   height: 90vh;
+  overflow: scroll;
+}
+
+.box{
+  width: 24vw;
+  height: 34.5vh;
+  float: left;
+  background-color: #E1E1E1;
+  border: 2.5px black solid;
+  margin: 7vh 0 0 7vw;
 }
