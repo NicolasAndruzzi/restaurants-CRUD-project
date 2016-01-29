@@ -2,13 +2,4 @@ extends layout
 
 block content
 
-  h1= title
-  p Welcome to #{restaurants.name}
-  p #{restaurants.id}
-  
-
-  .bigContainer
-    .container
-      for restaurant in restaurants 
-        .box
-          a(href='/restaurants/'+restaurant.id)= restaurant.name
+  h1= title  

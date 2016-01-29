@@ -1,7 +1,13 @@
 extends ../layout
 
 block content
+  header #{restaurant.name}
   main
-    h1= title
-    p welcome to the #{title}
-    h1= results.name
+    img.showImg(src='/images/'+restaurant.img)
+    .showInfo
+      div #{restaurant.cuisine} cuisine
+      div Located in #{restaurant.city}, #{restaurant.state}
+      p #{restaurant.description}
+      p Rating: #{restaurant.rating}
+      a.editB(href='/restaurants/'+restaurant.id+'/edit') Edit
+      a.deleteB(href='/restaurants/'+restaurant.id+'/delete') Delete

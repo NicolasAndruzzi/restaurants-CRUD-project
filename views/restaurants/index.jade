@@ -1,8 +1,15 @@
 extends ../layout
 
 block content
+  header gTables
   a.newRestaurant(href="/restaurants/new") New Restaurant
   main
     for restaurant in restaurants 
       .box
+        img(src='images/'+restaurant.img)
         a(href='/restaurants/'+restaurant.id)= restaurant.name
+        .info
+          div #{restaurant.cuisine} Cuisine
+          div #{restaurant.city}, #{restaurant.state}
+        .star
+          div #{restaurant.rating}
