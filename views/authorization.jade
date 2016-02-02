@@ -2,14 +2,17 @@ extends layout
 
 block content
   header gTables
-  a.authButton(href="/authorization") Signup / Login
-  a.headerButton(href="/restaurants/") All Restaurants
+  if authStatus == "1234567890987654321"
+    a.logoutButton(href="/authorization/logout") Logout
+  else
+    a.authButton(href="/authorization") Signup / Login
+  a.headerButton(href="/restaurants/new") New Restaurant
   main
     .signUp
       h1 Sign Up Here
       br
-      form(action="/authorization/" method="POST")
-        label(for="name") Name
+      form(action="/authorization/signup" method="POST")
+        label(for="name") Username
         br
         input(type="text" name="name" placeholder="Your Name" required)
         br
@@ -26,7 +29,7 @@ block content
     .logIn
       h1 Log In Here
       br
-      form(action="/authorization/" method="POST")
+      form(action="/authorization/login" method="POST")
         label(for="email") E-mail
         br
         input(type="email" name="email" placeholder="Your E-mail Address" required)

@@ -19,6 +19,14 @@ header{
   font-size: 3vh;
 }
 
+.logoutButton{
+  position: fixed;
+  top: 6vh;
+  left: 1vw;
+  color: white;
+  font-size: 3vh;
+}
+
 .headerButton{
   position: fixed;
   top: 6vh;

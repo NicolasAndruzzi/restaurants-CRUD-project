@@ -8,7 +8,7 @@ exports.up = function(knex, Promise) {
     table.integer('rating');
     table.string('img');
     table.text('description');
-  })
+  });
 };
 
 exports.down = function(knex, Promise) {

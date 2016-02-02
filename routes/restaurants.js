@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var knex = require('knex');
+// var knex = require('knex');
 
-var server = require('../serverlogic/serverlogic.js');
 var knex = require('../db/knex');
 
 
@@ -13,7 +12,7 @@ function restaurants(){
 
 router.get('/', function(req, res, next) {
   restaurants().select().then(function(results) {
-    res.render('restaurants/index', {restaurants: results});
+    res.render('restaurants/index', {restaurants: results, authStatus: req.cookies.userAuth});
   });
 });
 

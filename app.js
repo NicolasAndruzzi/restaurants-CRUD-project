@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var restaurants = require('./routes/restaurants');
 var authorization = require('./routes/authorization');
+var authChecker = require('./routes/authChecker');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/', authChecker);
 app.use('/authorization', authorization);
 app.use('/restaurants', restaurants);
 
