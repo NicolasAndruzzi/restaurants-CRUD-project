@@ -5,6 +5,7 @@ module.exports = {
 
   development: {
     client: 'pg',
+    // Swap out businesses below for name of database being used
     connection: 'postgres://localhost/businesses'
   },
 
@@ -14,3 +15,4 @@ module.exports = {
   }
 
 };
+ 

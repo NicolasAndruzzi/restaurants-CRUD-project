@@ -6,8 +6,8 @@ block content
   main
     for restaurant in restaurants 
       .box
-        img(src='images/'+restaurant.img)
-        a(href='/restaurants/'+restaurant.id)= restaurant.name
+        img(src='/images/#{restaurant.img}')
+        a(href='/restaurants/#{restaurant.id}')= restaurant.name
         .info
           div #{restaurant.cuisine} Cuisine
           div #{restaurant.city}, #{restaurant.state}
