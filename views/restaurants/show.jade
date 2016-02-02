@@ -2,6 +2,7 @@ extends ../layout
 
 block content
   header #{restaurant.name}
+  a.headerButton(href="/restaurants/") All Restaurants
   main
     img.showImg(src="#{restaurant.img}")
     .showInfo
