@@ -3,5 +3,10 @@ extends ../layout
 block content
   header gTables
   main
-    h1= title
-    p welcome to the #{title}
+    form(action="/restaurants/"+restaurant.id+"/edit" method="POST")
+      div.form
+        label(for="name") Name
+        input(type="text" name="name" placeholder="Restaurant Name" value=restaurant.name)
+        label(for="city") Location
+        input(type"text" name="city" placeholder="City" value=restaurant.city)
+        input(type="submit" value="Submit")

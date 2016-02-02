@@ -3,12 +3,10 @@ extends ../layout
 block content
   header gTables
   main
-    form(action="/restaurants" method="POST")
+    form(action="/restaurants/new" method="POST")
       div.form
         label(for="name") Name
         input(type="text" name="name" placeholder="Restaurant Name")
         label(for="city") Location
         input(type"text" name="city" placeholder="City")
-        label(for="") Cuisine
-        for x in cuisnes
-          input(type="radio" name="type" value="x")
+        input(type="submit" value="Submit")

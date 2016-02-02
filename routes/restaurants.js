@@ -18,17 +18,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new', function(req, res, next) {
-  res.render("restaurants/new" , {cuisnes: server.foods});
+  res.render('restaurants/new');
 });
 
 router.post('/new', function(req, res, next) {
-  restaurants().insert({name: 'test'}).then(function() {
+  restaurants().insert({name: "Hello"}).then(function(results) {
     res.redirect('/restaurants');
   });
 });
 
 router.get('/:id', function(req, res, next) {
-  restaurants().select().where("id", req.params.id).then(function(results){
+  restaurants().select().where('id', req.params.id).then(function(results){
     res.render('restaurants/show',{restaurant: results[0]});
   });
 });
@@ -37,6 +37,16 @@ router.get('/:id/edit', function(req, res, next) {
   restaurants().select().where("id", req.params.id).then(function(results){
     res.render('restaurants/edit',{restaurant: results[0]});
   });
+});
+
+router.post('/:id/edit', function(req, res, next) {
+    var updateItems = {
+      name: req.body.name,
+      city: req.body.city
+    }
+    restaurants().update(updateItems).where('id', req.params.id).then(function(results){
+        res.redirect('/restaurants/'+req.params.id);
+      })
 });
 
 router.get('/:id/delete', function(req, res, next) {
