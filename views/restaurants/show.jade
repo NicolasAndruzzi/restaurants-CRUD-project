@@ -3,7 +3,7 @@ extends ../layout
 block content
   header #{restaurant.name}
   main
-    img.showImg(src='/images/'+restaurant.img)
+    img.showImg(src="#{restaurant.img}")
     .showInfo
       div #{restaurant.cuisine} cuisine
       div Located in #{restaurant.city}, #{restaurant.state}

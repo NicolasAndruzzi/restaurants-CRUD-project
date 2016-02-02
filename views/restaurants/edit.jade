@@ -1,12 +1,181 @@
 extends ../layout
 
 block content
-  header gTables
+  header #{restaurant.name}
   main
     form(action="/restaurants/"+restaurant.id+"/edit" method="POST")
       div.form
         label(for="name") Name
+        br
         input(type="text" name="name" placeholder="Restaurant Name" value=restaurant.name)
+        br
         label(for="city") Location
+        br
         input(type"text" name="city" placeholder="City" value=restaurant.city)
-        input(type="submit" value="Submit")
+        br
+        select(name="state")
+          if restaurant.state
+            option(value="#{restaurant.state}") #{restaurant.state}
+            option(value="AL") AL
+            option(value="AK") AK
+            option(value="AZ") AZ
+            option(value="AR") AR
+            option(value="CA") CA
+            option(value="CO") CO
+            option(value="CT") CT
+            option(value="DE") DE
+            option(value="DC") DC
+            option(value="FL") FL
+            option(value="GA") GA
+            option(value="HI") HI
+            option(value="ID") ID
+            option(value="IL") IL
+            option(value="IN") IN
+            option(value="IA") IA
+            option(value="KS") KS
+            option(value="KY") KY
+            option(value="LA") LA
+            option(value="ME") ME
+            option(value="MD") MD
+            option(value="MA") MA
+            option(value="MI") MI
+            option(value="MN") MN
+            option(value="MS") MS
+            option(value="MO") MO
+            option(value="MT") MT
+            option(value="NE") NE
+            option(value="NV") NV
+            option(value="NH") NH
+            option(value="NJ") NJ
+            option(value="NM") NM
+            option(value="NY") NY
+            option(value="NC") NC
+            option(value="ND") ND
+            option(value="OH") OH
+            option(value="OK") OK
+            option(value="OR") OR
+            option(value="PA") PA
+            option(value="RI") RI
+            option(value="SC") SC
+            option(value="SD") SD
+            option(value="TN") TN
+            option(value="TX") TX
+            option(value="UT") UT
+            option(value="VT") VT
+            option(value="VA") VA
+            option(value="WA") WA
+            option(value="WV") WV
+            option(value="WI") WI
+            option(value="WY") WY
+          else
+          option(value="AL") AL
+          option(value="AK") AK
+          option(value="AZ") AZ
+          option(value="AR") AR
+          option(value="CA") CA
+          option(value="CO") CO
+          option(value="CT") CT
+          option(value="DE") DE
+          option(value="DC") DC
+          option(value="FL") FL
+          option(value="GA") GA
+          option(value="HI") HI
+          option(value="ID") ID
+          option(value="IL") IL
+          option(value="IN") IN
+          option(value="IA") IA
+          option(value="KS") KS
+          option(value="KY") KY
+          option(value="LA") LA
+          option(value="ME") ME
+          option(value="MD") MD
+          option(value="MA") MA
+          option(value="MI") MI
+          option(value="MN") MN
+          option(value="MS") MS
+          option(value="MO") MO
+          option(value="MT") MT
+          option(value="NE") NE
+          option(value="NV") NV
+          option(value="NH") NH
+          option(value="NJ") NJ
+          option(value="NM") NM
+          option(value="NY") NY
+          option(value="NC") NC
+          option(value="ND") ND
+          option(value="OH") OH
+          option(value="OK") OK
+          option(value="OR") OR
+          option(value="PA") PA
+          option(value="RI") RI
+          option(value="SC") SC
+          option(value="SD") SD
+          option(value="TN") TN
+          option(value="TX") TX
+          option(value="UT") UT
+          option(value="VT") VT
+          option(value="VA") VA
+          option(value="WA") WA
+          option(value="WV") WV
+          option(value="WI") WI
+          option(value="WY") WY
+        br
+        label(for="cuisine") Cuisine
+        br
+        select(type="text" name="cuisine")
+          if restaurant.cuisine
+            option(value="#{restaurant.cuisine}") #{restaurant.cuisine}
+            option(value="Mexican") Mexican
+            option(value="Italian") Italian
+            option(value="American") American
+            option(value="Thai") Thai
+            option(value="Vietnamese") Vietnamese
+          else
+            option(value="Mexican") Mexican
+            option(value="Italian") Italian
+            option(value="American") American
+            option(value="Thai") Thai
+            option(value="Vietnamese") Vietnamese
+        br
+        label(for="rating") Rating
+        br
+        if restaurant.rating == 1
+          input(type="radio" name="rating" value="1" checked)
+          input(type="radio" name="rating" value="2")
+          input(type="radio" name="rating" value="3")
+          input(type="radio" name="rating" value="4")
+          input(type="radio" name="rating" value="5")
+        if restaurant.rating == 2
+          input(type="radio" name="rating" value="1")
+          input(type="radio" name="rating" value="2" checked)
+          input(type="radio" name="rating" value="3")
+          input(type="radio" name="rating" value="4")
+          input(type="radio" name="rating" value="5")
+        if restaurant.rating == 3
+          input(type="radio" name="rating" value="1")
+          input(type="radio" name="rating" value="2")
+          input(type="radio" name="rating" value="3" checked)
+          input(type="radio" name="rating" value="4")
+          input(type="radio" name="rating" value="5")
+        if restaurant.rating == 4
+          input(type="radio" name="rating" value="1")
+          input(type="radio" name="rating" value="2")
+          input(type="radio" name="rating" value="3")
+          input(type="radio" name="rating" value="4" checked)
+          input(type="radio" name="rating" value="5")
+        if restaurant.rating == 5
+          input(type="radio" name="rating" value="1")
+          input(type="radio" name="rating" value="2")
+          input(type="radio" name="rating" value="3")
+          input(type="radio" name="rating" value="4")
+          input(type="radio" name="rating" value="5" checked)
+        br
+        label(for="imgURL") Image
+        br
+        input(type="text" name="imgURL" placeholder="Paste image URL here" value=restaurant.img)
+        br
+        label(for="description") Description
+        br
+        textarea(rows="5" name="description" placeholder="Restaurant discription..." value=restaurant.description) #{restaurant.description}
+        br
+        button(type"submit") Submit

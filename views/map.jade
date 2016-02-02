@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  br
+  br
+  br
+  div(id="map" style="height: 300px; width: 300px; border: 1px solid black")
+  p(id="hello")
+  
+  script.
+    var map;
+  
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: #{lat}, lng: #{long} },
+      zoom: 13
+      });
+    }
+  
+  script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlnwQZvWxJEBUc7mJETX1B4cKrdYEjh30&callback=initMap")
