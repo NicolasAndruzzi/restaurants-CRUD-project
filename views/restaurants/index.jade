@@ -2,6 +2,7 @@ extends ../layout
 
 block content
   header gTables
+  a.authButton(href="/authorization") Signup / Login
   a.headerButton(href="/restaurants/new") New Restaurant
   main
     for restaurant in restaurants 
