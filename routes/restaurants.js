@@ -52,25 +52,26 @@ router.get('/:id/delete', function(req, res, next) {
 });
 
 router.get('/:id/map', function(req,res,next){
+  //     var google_api = "https://maps.googleapis.com/maps/api/geocode/json?address=";
+  //     var address = 'Zuni+St+&+W+34th+Ave,+Denver,+CO+80211'
+  //     var my_key = "&key=AIzaSyBlnwQZvWxJEBUc7mJETX1B4cKrdYEjh30";
+  //
+  //
+  // request(google_api+address+my_key, function (error, response, body) {
+  //   if (!error && response.statusCode == 200) {
+  //     var jase = JSON.parse(body);
+  //     var j = jase.results[0];
+  //     var lat_long = j.geometry.location
+  //     var lat = Number(lat_long.lat)
+  //     var lng = Number(lat_long.lng)
+  //
+  //
+  //
+  //     res.render('map', { header: 'Reviews', lat: lat, long: lng});
+  //   }
+  // })
 
-      var google_api = "https://maps.googleapis.com/maps/api/geocode/json?address=";
-      var address = 'Zuni+St+&+W+34th+Ave,+Denver,+CO+80211'
-      var my_key = "&key=AIzaSyBlnwQZvWxJEBUc7mJETX1B4cKrdYEjh30";
-
-
-  request(google_api+address+my_key, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      var jase = JSON.parse(body);
-      var j = jase.results[0];
-      var lat_long = j.geometry.location
-      var lat = Number(lat_long.lat)
-      var lng = Number(lat_long.lng)
-
-
-
-      res.render('map', { header: 'Reviews', lat: lat, long: lng});
-    }
-  })
+  res.render('map', {id: req.params.id})
 });
 
 

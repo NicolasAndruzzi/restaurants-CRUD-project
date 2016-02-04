@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var restaurants = require('./routes/restaurants');
 var authorization = require('./routes/authorization');
 var authChecker = require('./routes/authChecker');
+var employees = require('./routes/employees');
 
 var app = express();
 
@@ -28,6 +29,8 @@ app.use('/', routes);
 app.use('/', authChecker);
 app.use('/authorization', authorization);
 app.use('/restaurants', restaurants);
+app.use('/', employees);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

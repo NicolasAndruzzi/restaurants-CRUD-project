@@ -7,7 +7,9 @@ block content
     img.showImg(src="#{restaurant.img}")
     .showInfo
       div #{restaurant.cuisine} cuisine
-      div Located in #{restaurant.city}, #{restaurant.state}
+      a.location(href='/restaurants/'+restaurant.id+'/map') Located in: #{restaurant.city}, #{restaurant.state}
+      br
+      br
       p #{restaurant.description}
       p Rating: #{restaurant.rating}
       a.editB(href='/restaurants/'+restaurant.id+'/edit') Edit

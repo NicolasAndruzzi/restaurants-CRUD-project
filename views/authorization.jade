@@ -2,7 +2,7 @@ extends layout
 
 block content
   header gTables
-  if authStatus == "1234567890987654321"
+  if authStatus
     a.logoutButton(href="/authorization/logout") Logout
   else
     a.authButton(href="/authorization") Signup / Login

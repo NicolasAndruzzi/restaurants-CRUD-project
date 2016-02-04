@@ -24,7 +24,7 @@ router.post('/login', function(req, res, next) {
   users().select().then(function(results){
     results.forEach (function(row, i) {
       if (row.email === req.body.email && row.password === req.body.password){
-        res.cookie("userAuth", "1234567890987654321");
+        res.cookie("userAuth", row.id);
         res.redirect('/restaurants');
       }
     });
