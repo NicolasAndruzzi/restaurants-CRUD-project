@@ -28,7 +28,7 @@ router.post('/new', function(req, res, next) {
 
 router.get('/:id', function(req, res, next) {
   restaurants().select().where('id', req.params.id).then(function(results){
-    res.render('restaurants/show',{restaurant: results[0]});
+    res.render('restaurants/show',{restaurant: results[0], authStatus: req.cookies.userAuth});
   });
 });
 

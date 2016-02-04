@@ -83,18 +83,18 @@ main{
 
 .showImg{
   float: left;
-  width: 50vw;
-  height: 60vh;
-  margin: 5vh 0 0 5vw;
+  width: 40vw;
+  height: 55vh;
+  margin: 3vh 0 0 5vw;
 }
 
 .showInfo{
   position: fixed;
-  top: 15vh;
-  left: 56.5vw;
-  width: 43.5vw;
-  height: 85vh;
-  font-size: 3vh;
+  top: 13vh;
+  left: 53vw;
+  width: 42vw;
+  height: 55vh;
+  font-size: 2.25vh;
   overflow: scroll;
 }
 
@@ -112,6 +112,24 @@ main{
   border-radius: 1vh;
 }
 
+.showInfo div.loc{
+  float: left;
+}
+
+.showInfo div a{
+  float: none;
+  margin-left: 5px;
+}
+
+.reviews{
+  background-color: yellow;
+  position: fixed;
+  top: 71vh;
+  left: 3vw;
+  width: 94vw;
+  height: 26vh;
+}
+
 .editB{
   background-color: #7FC378
 }
@@ -126,6 +144,9 @@ main{
   left: 0;
   width: 50vw;
   height: 90vh;
+  text-align: center;
+  margin: 10vh;
+  font-size: 2vh;
 }
 
 .logIn{
@@ -134,4 +155,29 @@ main{
   right: 0;
   width: 50vw;
   height: 90vh;
+  text-align: center;
+  margin: 10vh;
+  font-size: 2vh;
+}
+
+.form{
+  position: fixed;
+  width: 100vw;
+  top: 10vh;
+  height: 90vh;
+  text-align: center;
+  overflow: scroll;
+}
+
+.form div{
+  margin: 3vh;
+  font-size: 2vh;
+}
+
+.form div textarea{
+  width: 55vw;
+}
+
+.form div .radio{
+  display: inline-block;
 }

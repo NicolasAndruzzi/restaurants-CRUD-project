@@ -10,6 +10,7 @@ var restaurants = require('./routes/restaurants');
 var authorization = require('./routes/authorization');
 var authChecker = require('./routes/authChecker');
 var employees = require('./routes/employees');
+var validate = require('./routes/validate');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/', validate);
 app.use('/', authChecker);
 app.use('/authorization', authorization);
 app.use('/restaurants', restaurants);

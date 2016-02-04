@@ -2,15 +2,22 @@ extends ../layout
 
 block content
   header #{restaurant.name}
+  if authStatus
+    a.logoutButton(href="/authorization/logout") Logout
+  else
+    a.authButton(href="/authorization") Signup / Login
   a.headerButton(href="/restaurants/") All Restaurants
   main
     img.showImg(src="#{restaurant.img}")
     .showInfo
-      div #{restaurant.cuisine} cuisine
-      a.location(href='/restaurants/'+restaurant.id+'/map') Located in: #{restaurant.city}, #{restaurant.state}
+      div #{restaurant.cuisine} Cuisine
+      div.loc Located in:
+        a.location(href='/restaurants/'+restaurant.id+'/map') #{restaurant.city}, #{restaurant.state}
       br
       br
       p #{restaurant.description}
       p Rating: #{restaurant.rating}
       a.editB(href='/restaurants/'+restaurant.id+'/edit') Edit
       a.deleteB(href='/restaurants/'+restaurant.id+'/delete') Delete
+    .reviews
+      h4 Reviews for #{restaurant.name}
