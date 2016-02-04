@@ -16,4 +16,8 @@ block content
           div #{restaurant.cuisine} Cuisine
           div #{restaurant.city}, #{restaurant.state}
         .star
-          div #{restaurant.rating}
+          if restaurant.rating == 1
+            img(src='../../images/star.png')
+          if restaurant.rating = 1
+            img(src='../../images/star.png')
+            img(src='../../images/star.png')
