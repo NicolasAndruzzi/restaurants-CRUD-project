@@ -22,6 +22,19 @@ block content
       a.addReview(href='/restaurants/'+restaurant.id+'/reviews/new') Add Review
     a.addEmployee(href='/restaurants/'+restaurant.id+'/employees/new') Add Employee
     .employees
+      table(border='0')
+        thead
+          tr
+            th First Name
+            th Last Name
+            th Position
+        tbody
+          //- each item, i in items
+          //-   tr
+          //-     td= i+1
+          //-     td= item.code
+          //-     td= item.name
+          //-     td= item.description      
       h4 Employees for #{restaurant.name}
     .reviews
       h4 Reviews for #{restaurant.name}

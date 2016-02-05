@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/', validate);
+// app.use('/', validate);
 app.use('/', authChecker);
 app.use('/authorization', authorization);
 app.use('/restaurants', restaurants);

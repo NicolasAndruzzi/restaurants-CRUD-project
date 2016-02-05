@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 // var knex = require('knex');
-
 var knex = require('../db/knex');
 
 
@@ -9,10 +8,14 @@ function restaurants(){
   return knex('restaurants');
 }
 
+function employees(){
+  return knex('employees');
+}
+
 
 router.get('/', function(req, res, next) {
   restaurants().select().then(function(results) {
-    res.render('restaurants/index', {restaurants: results, authStatus: req.cookies.userAuth});
+      res.render('restaurants/index', {restaurants: results, authStatus: req.cookies.userAuth});
   });
 });
 

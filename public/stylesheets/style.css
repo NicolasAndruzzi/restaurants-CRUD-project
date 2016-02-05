@@ -142,12 +142,26 @@ main{
 }
 
 .employees{
-  background-color: red;
+  /*background-color: red;*/
   position: fixed;
   top: 65vh;
   left: 3vw;
   width: 29vw;
   height: 33vh;
+}
+
+.employees table{
+  width: 100%;
+  text-align: center;
+}
+
+.employees table th{
+  background-color: #7FC378;
+  text-align: center;
+}
+
+.employees table td{
+  text-align: center;
 }
 
 .reviews{
