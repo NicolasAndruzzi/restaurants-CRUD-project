@@ -1,7 +1,8 @@
 extends ../layout
 
 block content
-  header #{restaurant.name}
+  header 
+    a(href='/restaurants/') #{restaurant.name}
   if authStatus
     a.logoutButton(href="/authorization/logout") Logout
   else
@@ -14,10 +15,13 @@ block content
       div.loc Located in:
         a.location(href='/restaurants/'+restaurant.id+'/map') #{restaurant.city}, #{restaurant.state}
       br
-      br
       p #{restaurant.description}
       p Rating: #{restaurant.rating}
       a.editB(href='/restaurants/'+restaurant.id+'/edit') Edit
       a.deleteB(href='/restaurants/'+restaurant.id+'/delete') Delete
+      a.addReview(href='/restaurants/'+restaurant.id+'/reviews/new') Add Review
+    a.addEmployee(href='/restaurants/'+restaurant.id+'/employees/new') Add Employee
+    .employees
+      h4 Employees for #{restaurant.name}
     .reviews
       h4 Reviews for #{restaurant.name}
